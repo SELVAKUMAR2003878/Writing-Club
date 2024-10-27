@@ -1,0 +1,66 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    background-image: url(bg1.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#myh1{
+    color:hsl(0, 0%, 100%);
+    text-shadow: 4px 4px 4px black;
+}
+#myh3{
+    color:hsl(0, 0%, 100%);
+
+}
+
+#formhead {
+    color:white;
+    text-shadow: 4px 4px 4px black;
+}
+
+#form {
+    text-align: center;
+    margin: auto;
+    height: auto;
+}
+
+#Age ,#count{
+    width:162px;
+}
+
+#result {
+    color:white;
+    font-size: 1em;
+}
+
+.submit {
+    margin-top: 15px;
+    border-radius: 10px;
+    background-color: hsl(0, 0%, 100%);
+    color:hsl(0, 0%, 0%);
+    padding: 5px;
+    font-size: 1.6em;
+}
+
+.submit:hover{
+    background-color: rgb(0, 0, 0);
+    color:hsl(0, 0%, 100%);
+}
+
+#service h3 {
+    color:white;
+}
+
+#message {
+    max-height: 50px;
+    max-width:200px;
+    overflow: auto;
+    background-color: white;
+
+}
