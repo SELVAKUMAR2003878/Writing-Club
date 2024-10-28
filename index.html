@@ -13,7 +13,8 @@
 <body>
     <header id="head">
         <h1 id="myh1"><i>Writing Club</i></h1>
-        <h3 id="myh3">To write the assignment and record work for school and College students. To need time for writing,A minimum one Month.Writing fee for Record work : Rs.150 per record and Assignment work :Rs.10 per
+        <h3 id="myh3">To write the assignment and record work for school and College students. To need time for
+            writing,A minimum two week.Writing fee for Record work : Rs.150 per record and Assignment work :Rs.10 per
             (Note:This service is only for sick students on exams time)
         </h3>
     </header>
@@ -30,36 +31,39 @@
                         </tr>
                         <tr>
                             <td><label for="Age">Age:</label></td>
-                            <td><input type="number" id="Age" name="age" required placeholder="Enter Your Age" min="18" max="25">
+                            <td><input type="number" id="Age" name="age" required placeholder="Enter Your Age" min="18"
+                                    max="25">
                             </td>
                         </tr>
                         <tr>
                             <td><label for="phone">Phone Number:</label></td>
-                            <td><input type="tel" id="phone" name="phone" required placeholder="Enter Your PhoneNumber"></td>
+                            <td><input type="tel" id="phone" name="phone" required placeholder="Enter Your PhoneNumber">
+                            </td>
                         </tr>
                         <tr>
                             <td><label for="College">College:</label></td>
-                            <td><input type="text" id="College" name="college" required placeholder="Enter Your College Name"
-                                    minlength="5" maxlength="40"></td>
+                            <td><input type="text" id="College" name="college" required
+                                    placeholder="Enter Your College Name" minlength="5" maxlength="40"></td>
                         </tr>
                         <tr>
                             <td><label for="Email">Email:</label></td>
-                            <td><input type="email" id="Email" name="email" required placeholder="Enter Your Email"></td>
+                            <td><input type="email" id="Email" name="email" required placeholder="Enter Your Email">
+                            </td>
                         </tr>
                         <tr>
                             <td><label for="Dept">Dept:</label></td>
-                            <td><input type="text" id="Dept" name="dept" required placeholder="Enter Your Dept" minlength="2"
-                                    maxlength="5"></td>
+                            <td><input type="text" id="Dept" name="dept" required placeholder="Enter Your Dept"
+                                    minlength="2" maxlength="8"></td>
                         </tr>
                         <tr>
-                            <td><label for="select" >Select:</label></td>
+                            <td><label for="select">Select:</label></td>
                             <td><select name="select" id="select">
                                     <option value="record">Record</option>
                                     <option value="assignment">Assignment</option>
                                 </select></td>
                         </tr>
                         <tr>
-                            <td><label for="time" >Duration:</label></td>
+                            <td><label for="time">Duration:</label></td>
                             <td><select name="time" id="time">
                                     <option value="2-week">2-Week</option>
                                     <option value="3-week">3-Week</option>
@@ -79,11 +83,15 @@
                             <td><select name="sample" id="sample">
                                     <option value="offline">Offline</option>
                                     <option value="online">Online</option>
-                                    
+
                                 </select></td>
                         </tr>
                         <tr>
-                            <td><label>Total Amount:</label></td><td><div id="amount" ><a  onclick="view()"><input type="text" id="AMOUNT" name="amount" readonly value="Press here View Amount"  ></a></div></td>
+                            <td><label>Total Amount:</label></td>
+                            <td>
+                                <div id="amount"><a onclick="view()"><input type="text" id="AMOUNT" name="amount"
+                                            readonly value="Press here View Amount"></a></div>
+                            </td>
                         </tr>
 
                     </table>
@@ -105,9 +113,8 @@
         <hr>
         <div id="help">
             <h3>Ask any help</h3>
-            <label for="Gmail">Gmail:</label><a
-                href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox"
-                id="Gmail" target="_blank">selva91823@gmail.com</a>
+            <label for="Gmail">Gmail:</label><a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox"
+                target="_blank" id="Gmail" title="Gmail">selva91823@gmail.com</a>
         </div>
         <hr>
         <div id="feed back">
@@ -117,20 +124,23 @@
                     <table>
                         <tr>
                             <td><label for="fname">Name:</label></td>
-                            <td><input type="text"  id="fname" required name="Fname" placeholder="Enter Your Name"></td>
+                            <td><input type="text" id="fname" required name="Fname" placeholder="Enter Your Name"></td>
 
                         </tr>
                         <tr>
                             <td><label for="femail">Email:</label></td>
-                            <td><input type="email" id="femail" required name="Femail" placeholder="Enter Your Email"></td>
+                            <td><input type="email" id="femail" required name="Femail" placeholder="Enter Your Email">
+                            </td>
                         </tr>
                         <tr>
                             <td><label for="fphone">Mobile Number:</label></td>
-                            <td><input type="tel" id="fphone" required name="Fphone" placeholder="Enter your Number"></td>
+                            <td><input type="tel" id="fphone" required name="Fphone" placeholder="Enter your Number">
+                            </td>
                         </tr>
                         <tr>
                             <td><label for="fcomment">feedback:</label></td>
-                            <td><textarea id="fcomment" placeholder="Type your message here..." rows="5" cols="20" name="Fcomment"></textarea></td>
+                            <td><textarea id="fcomment" placeholder="Type your message here..." rows="5" cols="20"
+                                    name="Fcomment"></textarea></td>
                         </tr>
                     </table>
                     <button class="submit">Submit</button><br><br><br>
@@ -144,46 +154,50 @@
         const form = document.forms['submit-to-google-sheet1']
         const result = document.getElementById("result");
         form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                result.textContent = "Data successfully Submit";
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    result.textContent = "Data successfully Submit";
 
-                setTimeout(function() {
-                    result.textContent = "";
-                },2000)
-                form.reset();
-            })
-            .catch(error => {
-                result.textContent = "Error";
-            })
+                    setTimeout(function () {
+                        result.textContent = "";
+                    }, 2000)
+                    form.reset();
+                })
+                .catch(error => {
+                    result.textContent = "Error";
+                })
         })
-      </script>
-      <script>
+    </script>
+    <script>
         const scriptURL1 = 'https://script.google.com/macros/s/AKfycbzF1hzf5DXYdh3ufs9IX50-rvsnbIdeLs-RFoXYw49JhW5vz4gDhuPKmFEkcv9yzl8/exec'
         const form1 = document.forms['submit-to-google-sheet2']
         form1.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL1, { method: 'POST', body: new FormData(form1)})
-            .then(response => {
-                window.alert("Thanks for your feed back");
-                form1.reset();
+            e.preventDefault()
+            fetch(scriptURL1, { method: 'POST', body: new FormData(form1) })
+                .then(response => {
+                    window.alert("Thanks for your feed back");
+                    form1.reset();
 
-            })
-            .catch(error => {
-                window.alert("Error");
-            })
+                })
+                .catch(error => {
+                    window.alert("Error");
+                })
         })
-      </script>
-      <script src="script.js"></script>
-      <script>
+    </script>
+    <script src="script.js"></script>
+    <script>
+
         function sendMail() {
-            (function(){
+            (function () {
                 emailjs.init("3NlLDAlluPb9_5XOW"); //Account public key
             })();
+
+            let NAme = document.getElementById("Name").value;
+
             let phonenum = document.getElementById("phone").value;
             let wdept = document.getElementById("Dept").value;
-            
+
             let brownSh = document.getElementById("check");
 
             brownSh.checked ? brownSh = "true" : brownSh = "false";
@@ -194,26 +208,33 @@
             let WOrk = document.getElementById("select").value;
             let COunt = document.getElementById("count").value;
 
-            var params = {
-                Name: document.getElementById("Name").value,
-                subject: document.getElementById("select").value,
-                Email: document.getElementById("Email").value,
-                message: `phoneNumber:${phonenum}/Work:${WOrk}/Count:${COunt}/College:${College}/dept:${wdept}/brownSheet:${brownSh}/Time:${Time}/Sample:${Sample}/Amount:${AMount}`,
+            if (NAme != "" && phonenum != "" && College != "" && !COunt == "") {
+                var params = {
+                    Name: document.getElementById("Name").value,
+                    subject: document.getElementById("select").value,
+                    Email: document.getElementById("Email").value,
+                    message: `Name:${NAme}/phoneNumber:${phonenum}/Work:${WOrk}/Count:${COunt}/College:${College}/dept:${wdept}/brownSheet:${brownSh}/Time:${Time}/Sample:${Sample}/Amount:${AMount}`,
 
-            };
-            var serviceID = "service_3na2787"; //Email service ID
-            var templateID = "template_c6padhf"; //Email template ID
+                };
+                var serviceID = "service_3na2787"; //Email service ID
+                var templateID = "template_c6padhf"; //Email template ID
 
-            emailjs.send(serviceID, templateID, params)
-            .then( res => {
-                window.alert("Email sent successfully");
-            })
-            .catch( error => {
-                window.alert("Error");
-            });
+                emailjs.send(serviceID, templateID, params)
+                .then( res => {
+                    window.alert("Email sent successfully");
+                })
+                .catch( error => {
+                    window.alert("Error");
+                });
+            }
+            else {
+                window.alert("Enter the details");
+            }
+
+
         }
 
-      </script>
+    </script>
 </body>
 
 </html>

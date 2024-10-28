@@ -1,4 +1,5 @@
 let run;
+let check = 0;
 function view() {
     let work = document.getElementById("select").value;
     let time = document.getElementById("time").value;
@@ -6,7 +7,7 @@ function view() {
     let brown = document.getElementById("check");
     let sample = document.getElementById("sample").value;
     let Amount = document.getElementById("AMOUNT");
-    console.log(work);
+    check++;
     
     if(work == "record") {
         if(time == "2-week") {
@@ -108,10 +109,16 @@ function view() {
     }
     let times = 3000;
     run =  setInterval(view , times);
-    
-    times = times + 300;
 
+    times = times + 300;
+    if(check == 1024) {
+        setTimeout("location.reload(true);",3000);
+        
+    }
 }
+
+
+
 /* 
 document.getElementById("mysubmit").onclick = function() {
 
